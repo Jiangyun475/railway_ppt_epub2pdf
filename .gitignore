@@ -7,3 +7,8 @@ venv/
 env/
 *.log
 .DS_Store
+*.epub
+*.ppt
+*.pptx
+*.pdf
+test_*.py
