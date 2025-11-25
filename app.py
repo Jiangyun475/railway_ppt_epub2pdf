@@ -148,10 +148,22 @@ def convert_ppt_to_pdf(input_path, output_dir):
             logger.error(f"LibreOffice 未安装或无法运行: {e}")
             return None
         
-        # 转换命令
+        # # 转换命令
+        # cmd = [
+        #     'libreoffice',
+        #     '--headless',
+        #     '--convert-to', 'pdf',
+        #     '--outdir', output_dir,
+        #     input_path
+        # ]
+
         cmd = [
             'libreoffice',
             '--headless',
+            '--nologo',
+            '--no-first-start-wizard',
+            # 关键：指定临时配置目录，防止权限错误
+            '-env:UserInstallation=file:///tmp/LibreOffice_Conversion',
             '--convert-to', 'pdf',
             '--outdir', output_dir,
             input_path

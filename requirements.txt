@@ -3,3 +3,5 @@ gunicorn==21.2.0
 werkzeug==3.0.1
 EbookLib==0.18
 weasyprint==60.1
+# 添加 lxml，确保安装二进制版本以加快构建
+lxml>=4.9.0
